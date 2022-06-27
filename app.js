@@ -5,7 +5,7 @@ const schedule = require("node-schedule");
 
 const app = express();
 let client;
-async function downloadFileFromFTP(fileName, override = false, isRoot = false) {
+async function downloadFileFromFTP(fileName = 'SiteData.xml', override = false, isRoot = false) {
     if (!fileName) return;
     try {
         if (!client) {
@@ -38,4 +38,4 @@ const start = async () => {
 
 start()
 
-schedule.scheduleJob('* * * * *', downloadFileFromFTP('SiteData.xml'));
+schedule.scheduleJob('* * * * *', downloadFileFromFTP);
