@@ -37,5 +37,5 @@ const start = async () => {
 start()
 let count = 0
 setInterval(() => {
-    downloadFileFromFTP('SiteData.xml').then(() => console.log('count',count +1) )
+    downloadFileFromFTP('SiteData.xml').then(() => console.log('count',count++) )
 }, 10000)
