@@ -35,9 +35,7 @@ const start = async () => {
             console.log(`server listen 8000`);
         }
     });
-
+    schedule.scheduleJob('* * * * *', downloadFileFromFTP);
 };
 
 start()
-
-schedule.scheduleJob('* * * * *', downloadFileFromFTP);
