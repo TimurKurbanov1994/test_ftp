@@ -16,6 +16,7 @@ async function downloadFileFromFTP(fileName, override = false, isRoot = false) {
                 password: 'gH1nR4cO4vgO6j',
                 secure: false,
             });
+            console.log(`Downloading ${fileName}...`);
             if (!fs.existsSync(fileName) || override) await client.downloadTo(fileName, fileName);
             console.log(`Downloaded ${fileName}`);
         }
@@ -38,4 +39,4 @@ start()
 let count = 0
 setInterval(() => {
     downloadFileFromFTP('SiteData.xml').then(() => console.log('count',count++) )
-}, 10000)
+}, 15000)
