@@ -1,6 +1,7 @@
 const ftp = require('basic-ftp');
 const express = require('express');
 const fs = require("fs");
+const schedule = require("node-schedule");
 
 const app = express();
 let client;
@@ -37,48 +38,4 @@ const start = async () => {
 
 start()
 
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-downloadFileFromFTP('SiteData.xml')
-
+schedule.scheduleJob('* * * * *', downloadFileFromFTP('SiteData.xml'));
