@@ -29,7 +29,7 @@ const downloadFileFromFTP = async () => {
 }
 
 const startSchedule = () => {
-    schedule.scheduleJob('* * * * *', downloadFileFromFTP);
+    schedule.scheduleJob('*/1 * * * *', downloadFileFromFTP);
 };
 
 const start = async () => {
