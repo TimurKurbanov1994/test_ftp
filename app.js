@@ -21,6 +21,7 @@ const downloadFileFromFTP = async () => {
             console.log(`Downloading ${fileName}...`);
             if (!fs.existsSync(fileName)) await client.downloadTo(fileName, fileName);
             console.log(`Downloaded ${fileName}`);
+            await client.close()
         }
     } catch (err) {
         console.log(err);
