@@ -5,7 +5,8 @@ const schedule = require("node-schedule");
 
 const app = express();
 let client;
-async function downloadFileFromFTP(fileName = 'SiteData.xml', override = false, isRoot = false) {
+const downloadFileFromFTP = async () => {
+    let fileName = 'SiteData.xml'
     if (!fileName) return;
     try {
         if (!client) {
@@ -18,7 +19,7 @@ async function downloadFileFromFTP(fileName = 'SiteData.xml', override = false, 
                 secure: false,
             });
             console.log(`Downloading ${fileName}...`);
-            if (!fs.existsSync(fileName) || override) await client.downloadTo(fileName, fileName);
+            if (!fs.existsSync(fileName)) await client.downloadTo(fileName, fileName);
             console.log(`Downloaded ${fileName}`);
         }
     } catch (err) {
