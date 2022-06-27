@@ -28,6 +28,9 @@ const downloadFileFromFTP = async () => {
     }
 }
 
+const startSchedule = () => {
+    schedule.scheduleJob('* * * * *', downloadFileFromFTP);
+};
 
 const start = async () => {
     app.listen(8000, (err) => {
@@ -35,7 +38,7 @@ const start = async () => {
             console.log(`server listen 8000`);
         }
     });
-    schedule.scheduleJob('* * * * *', downloadFileFromFTP);
+    await startSchedule()
 };
 
 start()
